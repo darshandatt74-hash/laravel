@@ -53,7 +53,7 @@ class CustomerApiController extends Controller
     }
 
     // UPDATE CUSTOMER
-    public function update(Request $request, $id)
+    public function update(Request $request, int $id)
     {
         $customer = User::find($id);
 
@@ -76,9 +76,13 @@ class CustomerApiController extends Controller
     }
 
     // DELETE CUSTOMER
-    public function destroy($id)
+    public function destroy(int $id)
     {
-        User::find($id)->delete();
+        $customer = User::find($id);
+
+        if ($customer) {
+            $customer->delete();
+        }
 
         return response()->json([
 
