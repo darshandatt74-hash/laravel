@@ -347,7 +347,7 @@ php artisan storage:link
 
 # Author
 
-## Darshan Datt
+## Darshan Dutt
 
 Premium Laravel Ecommerce Project
 
