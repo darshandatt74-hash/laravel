@@ -25,10 +25,10 @@
         <div class="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm font-semibold">
             <a href="/" class="text-[#f3c94f]">Home</a>
             @auth
-                <a href="/dashboard" class="transition hover:text-[#f3c94f]">Dashboard</a>
                 <a href="/shop" class="transition hover:text-[#f3c94f]">Shop</a>
                 <a href="/cart" class="transition hover:text-[#f3c94f]">Cart</a>
                 <a href="/orders" class="transition hover:text-[#f3c94f]">Orders</a>
+                <a href="{{ route('profile.edit') }}" class="transition hover:text-[#f3c94f]">Profile</a>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button class="text-red-300 transition hover:text-red-200">Logout</button>
@@ -142,7 +142,7 @@
         </div>
         <div><p class="text-xs font-bold uppercase tracking-[0.22em] text-white">Links</p><div class="mt-4 space-y-3 text-sm text-[#e8dcc4]"><p>Home</p><p>Shop</p><p>Orders</p></div></div>
         <div><p class="text-xs font-bold uppercase tracking-[0.22em] text-white">Support</p><div class="mt-4 space-y-3 text-sm text-[#e8dcc4]"><p>Contact</p><p>Privacy</p><p>Terms</p></div></div>
-        <div><p class="text-xs font-bold uppercase tracking-[0.22em] text-white">Contact</p><div class="mt-4 space-y-3 text-sm text-[#e8dcc4]"><p>support@myshop.com</p><p>+91 9876543210</p></div></div>
+        <div><p class="text-xs font-bold uppercase tracking-[0.22em] text-white">Contact</p><div class="mt-4 space-y-3 text-sm text-[#e8dcc4]"><p>support@myshop.com</p><p>+91 9000080000</p></div></div>
     </div>
 </footer>
 

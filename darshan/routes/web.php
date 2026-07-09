@@ -11,7 +11,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserOrderController;
 use App\Http\Controllers\AdminSettingsController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
 
 
 
@@ -37,7 +37,7 @@ Route::get('/category/{category}', [ShopController::class, 'category'])->name('c
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::redirect('/dashboard', '/')->name('dashboard');
 
     /*
     | Profile
@@ -93,4 +93,6 @@ Route::middleware('auth')->group(function () {
 |--------------------------------------------------------------------------
 */
 
+
 require __DIR__.'/auth.php';
+

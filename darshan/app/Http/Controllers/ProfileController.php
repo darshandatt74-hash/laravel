@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Order;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,8 +17,20 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+        $user = $request->user();
+        $recentOrders = Order::with('product')
+            ->where('user_id', $user->id)
+            ->latest()
+            ->take(5)
+            ->get();
+        $ordersCount = Order::where('user_id', $user->id)->count();
+        $totalSpent = Order::where('user_id', $user->id)->sum('price');
+
         return view('profile.edit', [
-            'user' => $request->user(),
+            'user' => $user,
+            'recentOrders' => $recentOrders,
+            'ordersCount' => $ordersCount,
+            'totalSpent' => $totalSpent,
         ]);
     }
 

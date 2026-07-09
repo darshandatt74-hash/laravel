@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
+    <title>MyShop</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -35,10 +35,6 @@
                     <a href="/" class="flex items-center gap-3 rounded px-4 py-3 text-sm font-medium transition @if(request()->is('/')) bg-[#d8b63c] text-[#141818] @else text-[#f6f0df] hover:bg-[#252b2c] hover:text-[#f3c94f] @endif">
                         <span class="h-2 w-2 rounded-full bg-current"></span>
                         Home
-                    </a>
-                    <a href="/dashboard" class="flex items-center gap-3 rounded px-4 py-3 text-sm font-medium transition @if(request()->is('dashboard')) bg-[#d8b63c] text-[#141818] @else text-[#f6f0df] hover:bg-[#252b2c] hover:text-[#f3c94f] @endif">
-                        <span class="h-2 w-2 rounded-full bg-current"></span>
-                        Dashboard
                     </a>
                     <a href="/shop" class="flex items-center gap-3 rounded px-4 py-3 text-sm font-medium transition @if(request()->is('shop')) bg-[#d8b63c] text-[#141818] @else text-[#f6f0df] hover:bg-[#252b2c] hover:text-[#f3c94f] @endif">
                         <span class="h-2 w-2 rounded-full bg-current"></span>
