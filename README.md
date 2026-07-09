@@ -1,4 +1,18 @@
-# MYSHOP
+## 🚀 Live Demo
+
+https://laravel-aa8m.onrender.com
+
+## Tech Stack
+
+- Laravel 12
+- PHP 8.3
+- MySQL
+- Docker
+- Render
+- GitHub
+
+
+  # MYSHOP
 
 Luxury Ecommerce Platform built with Laravel & Tailwind CSS.
 
