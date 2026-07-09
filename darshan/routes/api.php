@@ -2,9 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Product;
-use App\Models\Order;
-use App\Models\User;
+use App\Http\Controllers\Api\LookupController;
 use App\Http\Controllers\Api\CustomerApiController;
 use App\Http\Controllers\Api\CartApiController;
 
@@ -26,20 +24,8 @@ Route::put('/customers/update/{id}', [CustomerApiController::class, 'update']);
 Route::delete('/customers/delete/{id}', [CustomerApiController::class, 'destroy']);
 
 
-Route::get('/products', function () {
+Route::get('/products', [LookupController::class, 'products']);
 
-    return Product::all();
+Route::get('/orders', [LookupController::class, 'orders']);
 
-});
-
-Route::get('/orders', function () {
-
-    return Order::all();
-
-});
-
-Route::get('/users', function () {
-
-    return User::all();
-
-}); 
+Route::get('/users', [LookupController::class, 'users']);

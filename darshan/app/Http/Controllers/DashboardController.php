@@ -25,4 +25,13 @@ class DashboardController extends Controller
 
         return view('dashboard', compact('orders', 'ordersCount', 'cartCount', 'productCount'));
     }
+
+    public function admin()
+    {
+        if (Auth::user()->role !== 'admin') {
+            abort(403);
+        }
+
+        return view('admin.dashboard');
+    }
 }

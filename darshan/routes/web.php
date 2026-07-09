@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
@@ -11,7 +10,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserOrderController;
 use App\Http\Controllers\AdminSettingsController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
 
 
 
@@ -71,13 +70,7 @@ Route::middleware('auth')->group(function () {
     /*
     | Admin Dashboard
     */
-    Route::get('/admin/dashboard', function () {
-        if (Auth::user()->role !== 'admin') {
-            abort(403);
-        }
-
-        return view('admin.dashboard');
-    });
+    Route::get('/admin/dashboard', [DashboardController::class, 'admin']);
 
     Route::resource('admin/products', ProductController::class);
     Route::resource('admin/customers', CustomerController::class);
@@ -95,4 +88,3 @@ Route::middleware('auth')->group(function () {
 
 
 require __DIR__.'/auth.php';
-
